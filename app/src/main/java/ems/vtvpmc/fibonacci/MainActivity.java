@@ -28,7 +28,11 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                textView.setText(fibonacci(Integer.parseInt(editText.getText().toString())));
+                try {
+                    textView.setText(fibonacci(Integer.parseInt(editText.getText().toString())));
+                }catch (NumberFormatException ex) {
+                    textView.setText("");
+                }
             }
         });
     }
